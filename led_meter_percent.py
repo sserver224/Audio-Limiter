@@ -43,9 +43,6 @@ LPDWORD = ctypes.POINTER(wintypes.DWORD)
 LPUINT = ctypes.POINTER(wintypes.UINT)
 LPBOOL = ctypes.POINTER(wintypes.BOOL)
 PIUnknown = ctypes.POINTER(comtypes.IUnknown)
-RATE = 44100
-INPUT_BLOCK_TIME = 0.05
-INPUT_FRAMES_PER_BLOCK = int(RATE*INPUT_BLOCK_TIME)
 def get_resource_path(relative_path):
     try:
         # PyInstaller creates a temp folder and stores path in _MEIPASS
@@ -158,7 +155,6 @@ def close():
     win.destroy()
     appclosed=True
     sys.exit()
-pa = pyaudio.PyAudio()
 n=1
 def update_limiter():
     if sb.get()=='Off':
