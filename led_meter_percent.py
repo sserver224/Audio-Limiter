@@ -1,7 +1,4 @@
-#!/usr/bin/env python
 import os, errno
-import pyaudio
-import numpy
 from tkinter import *
 from tkinter.ttk import *
 import time
